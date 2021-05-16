@@ -1,8 +1,6 @@
 from telegram.ext import MessageHandler, Filters
 import stock_function # 주식관련 기능 모음 모듈
 
-
-
 def make_msg_response(dispatcher,saved_stock_list,data_url):
     # 현재 주가 return
     def current_stock(update, context):
@@ -17,10 +15,9 @@ def make_msg_response(dispatcher,saved_stock_list,data_url):
                 is_find = True
                 break
 
-        if is_find==False:  # 주식 정보를 못찾았을 경우 
+        if is_find==False:  # 주식 정보를 못찾았을 경우
             context.bot.send_message(chat_id=update.effective_chat.id, text="??")
-            
-    
+
     # Command가 아닌 말에 대해서만 반응
     current_stock_handler = MessageHandler(Filters.text & (~Filters.command), current_stock)
     dispatcher.add_handler(current_stock_handler)
