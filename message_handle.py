@@ -17,9 +17,9 @@ def make_msg_response(dispatcher,saved_stock_list,data_url):
                 is_find = True
                 break
 
-        if is_find==False:
+        if is_find==False:  # 주식 정보를 못찾았을 경우 
             context.bot.send_message(chat_id=update.effective_chat.id, text="??")
-
+            
     
     # Command가 아닌 말에 대해서만 반응
     current_stock_handler = MessageHandler(Filters.text & (~Filters.command), current_stock)
