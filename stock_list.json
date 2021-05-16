@@ -1,0 +1,9 @@
+{
+  "Current Stock Price": "https://finance.naver.com/item/main.nhn?code=",
+  "Stock List" : [
+    {"LG디스플레이" : "034220"},
+    {"원익IPS" : "240810"},
+    {"주성엔지니어링":"036930"},
+    {"코위버":"056360"}
+  ]
+}
